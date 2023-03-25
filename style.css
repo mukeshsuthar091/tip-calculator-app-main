@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/* :root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: hsl(185, 41%, 84%);
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0;
+
+}
+
+.main .splitter {
+    color: hsl(183, 100%, 15%);
+    letter-spacing: 8px;
+}
+
+.container {
+    background-color: hsl(0, 0%, 100%);
+    width: 62%;
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    margin: 60px 0 20px;
+    border-radius: 20px;
+}
+
+.left-side {
+    flex-basis: 50%;
+}
+
+
+.left-side form p {
+    color: hsl(186, 14%, 43%);
+    font-size: 15px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.left-side form input {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 700;
+    outline: none;
+}
+
+form #billAmount:focus,
+form #nPeople:focus,
+form #tipCustom:focus {
+    outline: 2px solid hsl(172, 67%, 45%);
+}
+
+form #billAmount,
+form #nPeople {
+    width: 100%;
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    text-align: end;
+}
+
+form .amount-of-bill,
+form .tips {
+    margin-bottom: 35px;
+}
+
+form .amount-of-bill,
+form .number-of-people {
+    position: relative;
+}
+
+form .amount-of-bill img,
+form .number-of-people img {
+    position: absolute;
+    left: 15px;
+    top: 45px;
+}
+
+
+.tips .inputs {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.tips .inputs input {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    min-width: 117px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.tips .inputs input:hover {
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 53%, 66%);
+}
+
+.tips .inputs input.active-btn {
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+}
+
+.tips #tipCustom {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    font-size: 20px;
+    text-align: end;
+}
+
+
+.number-of-people div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.number-of-people div .error {
+    color: rgb(253, 59, 33);
+}
+
+.number-of-people input.active,
+form #nPeople.active:focus {
+    outline: 2px solid rgb(253, 59, 33);
+}
+
+
+.right-side {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 10px;
+    padding: 25px;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.right-side .splitter-screen{
+    margin-bottom: 30px;
+}
+
+.right-side .splitter-screen div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.right-side div p {
+    color: hsl(189, 41%, 97%);
+    font-weight: 700;
+}
+
+.right-side div p span {
+    color: hsl(186, 14%, 43%);
+    font-size: 14px;
+}
+
+.right-side div h1 {
+    color: hsl(172, 67%, 45%);
+    font-size: 40px;
+}
+
+.right-side .btn-reset {
+    color: hsl(183, 100%, 15%);
+    /* background-color: hsl(185, 41%, 84%); */
+    background-color: hsl(172, 67%, 45%);
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right-side .btn-reset:hover {
+    background-color: hsl(172, 53%, 66%);
+}
+
+
+@media (max-width: 850px){
+    .container{
+        width: 80%;
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 450px){
+    .container{
+        width: 100%;
+        text-align: start;
+    }
+
+    .left-side,
+    .right-side{
+        flex-basis: 100%;
+    }
+
+    .tips .inputs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}

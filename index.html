@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+    
+    .attribution span {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body onload="amountSplitter()">
+
+  <div class="main">
+    <h2 class="splitter">SPLI<br>TTER</h2>
+    <div class="container">
+      <div class="left-side">
+        <form action="">
+          <div class="amount-of-bill">
+            <p>Bill</p>
+            <img src="images/icon-dollar.svg" alt="dollar" class="doller-img">
+            <input type="text" name="billAmount" id="billAmount" placeholder="0">
+          </div>
+
+          <div class="tips">
+            <p>Select Tip %</p>
+            <div class="inputs">
+              <input type="button" class="tip" id="tip5" value="5%">
+              <input type="button" class="tip" id="tip10" value="10%">
+              <input type="button" class="tip" id="tip15" value="15%">
+              <input type="button" class="tip" id="tip25" value="25%">
+              <input type="button" class="tip" id="tip50" value="50%">
+              <input type="text" name="tip-percentage" id="tipCustom" placeholder="Custuom">
+            </div>
+          </div>
+
+          <div class="number-of-people">
+            <div>
+              <p>Number of People</p>
+              <p class="error"></p>
+            </div>
+            <img src="images/icon-person.svg" alt="person" class="person-img">
+            <input type="text" name="nPeople" id="nPeople" class="" placeholder="0">
+          </div>
+
+        </form>
+      </div>
+
+      <div class="right-side">
+        <div class="splitter-screen"> 
+          <div>
+            <p>Tip Amount <br><span>/ person</span></p>
+            <h1 class="tipAmount">$0.00</h1>
+          </div>
+  
+          <div>
+            <p>Total <br><span>/ person</span></p>
+            <h1 class="totalAmount">$0.00</h1>
+          </div>
+        </div>
+
+        <button type="reset" class="btn-reset">Reset</button>
+      </div>
+
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <span>Mukesh Suthar</span>.
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
